@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Producto</title>
+</head>
+<body>
+<th:block th:include="mensajes"></th:block>
+<form method="post" enctype="multipart/form-data">
+    <label for="formGroupExampleInput" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" name="nombre" placeholder="Digite el nombre del producto">
+    <br>
+    <label for="formGroupExampleInput2" class="form-label">Código</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" name="codigo" placeholder="Digite el código del producto">
+    <br>
+    <label for="formGroupExampleInput3" class="form-label">Descrição</label>
+    <textarea class="form-control" id="formGroupExampleInput3" name="descripcion" placeholder="Digite la descripción del producto"></textarea>
+    <br>
+    <label for="formGroupExampleInput4" class="form-label">Preço</label>
+    <input type="number" class="form-control" id="formGroupExampleInput4" name="precio" step="0.01" placeholder="Digite el precio del producto">
+    <br>
+    <label for="formGroupExampleInput5" class="form-label">Desconto</label>
+    <input type="number" class="form-control" id="formGroupExampleInput5" name="descuento" step="0.01" placeholder="Digite el descuento del producto">
+    <br>
+    <label for="formGroupExampleInput6" class="form-label">Género</label>
+    <select class="form-select" name="genero" id="formGroupExampleInput6">
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+        <option value="Unisex">Unisex</option>
+    </select>
+    <br>
+    <label for="formGroupExampleInput7" class="form-label">Tipo de vestimenta</label>
+    <input type="text" class="form-control" id="formGroupExampleInput7" name="tipo" placeholder="Digite el tipo de vestimenta">
+    <br>
+    <label for="formFileMultiple" class="form-label">Foto</label>
+    <input class="form-control" type="file" name="file" id="formFileMultiple" multiple>
+    <br>
+    <button type="submit" class="btn btn-primary">Registrar</button>
+</form>
+</body>
+</html>
