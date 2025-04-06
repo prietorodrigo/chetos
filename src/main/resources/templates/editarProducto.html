@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Produto</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        <label for="formGroupExampleInput" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" name="nombre" th:value="${nombre}">
+        <br>
+        <label for="formGroupExampleInput2" class="form-label">Código</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" name="codigo" th:value="${codigo}">
+        <br>
+        <label for="formGroupExampleInput3" class="form-label">Descrição</label>
+        <textarea class="form-control" id="formGroupExampleInput3" name="descripcion" th:text="${descripcion}"></textarea>
+        <br>
+        <label for="formGroupExampleInput4" class="form-label">Preço</label>
+        <input type="number" class="form-control" id="formGroupExampleInput4" name="precio" step="0.01" th:value="${precio}">
+        <br>
+        <label for="formGroupExampleInput5" class="form-label">Desconto</label>
+        <input type="number" class="form-control" id="formGroupExampleInput5" name="descuento" step="0.01" th:value="${descuento}">
+        <br>
+        <label for="formGroupExampleInput6" class="form-label">Género</label>
+        <select class="form-select" name="genero" id="formGroupExampleInput6">
+            <option value="Masculino" th:selected="${genero eq 'Masculino'}">Masculino</option>
+            <option value="Femenino" th:selected="${genero eq 'Femenino'}">Femenino</option>
+            <option value="Unisex" th:selected="${genero eq 'Unisex'}">Unisex</option>
+        </select>
+        <br>
+        <label for="formGroupExampleInput7" class="form-label">Tipo de vestimenta</label>
+        <input type="text" class="form-control" id="formGroupExampleInput7" name="tipo" th:value="${tipo}">
+        <br>
+        <label for="formFileMultiple" class="form-label">Foto</label>
+        <input class="form-control" type="file" name="file" id="formFileMultiple" multiple>
+        <br>
+        <button type="submit" class="btn btn-primary">Editar</button>
+    </form>
+</body>
+</html>

@@ -18,6 +18,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class ProductoController {
@@ -73,6 +74,61 @@ public class ProductoController {
         ModelAndView mv = new ModelAndView("index");
         List<Producto> productoList = productoRepository.findAll();
         mv.addObject("productos", productoList);
+        return mv;
+    }
+
+    @RequestMapping(value="/listarProductos", method=RequestMethod.GET)
+    public ModelAndView getProductosCliente() {
+        ModelAndView mv = new ModelAndView("listarProductos");
+        List<Producto> productoList = productoRepository.findAll();
+        mv.addObject("productos", productoList);
+        return mv;
+    }
+
+    @RequestMapping(value="/editarProducto/{id}", method=RequestMethod.GET)
+    public ModelAndView editar(@PathVariable("id") Long id) {
+        ModelAndView mv = new ModelAndView("editarProducto");
+        Optional<Producto> producto = productoRepository.findById(id);
+        mv.addObject("nombre", producto.get().getNombre());
+        mv.addObject("codigo", producto.get().getCodigo());
+        mv.addObject("descripcion", producto.get().getDescripcion());
+        mv.addObject("precio", producto.get().getPrecio());
+        mv.addObject("descuento", producto.get().getDescuento());
+        mv.addObject("genero", producto.get().getGenero());
+        mv.addObject("tipo", producto.get().getTipo());
+        mv.addObject("id", producto.get().getId());
+        return mv;
+    }
+
+    @RequestMapping(value="/editarProducto/{id}", method=RequestMethod.POST)
+    public String editarLivroBanco(Producto producto, RedirectAttributes msg) {
+        Producto productoExistente = productoRepository.findById(producto.getId()).orElse(null);
+        productoExistente.setNombre(producto.getNombre());
+        productoExistente.setCodigo(producto.getCodigo());
+        productoExistente.setDescripcion(producto.getDescripcion());
+        productoExistente.setPrecio(producto.getPrecio());
+        productoExistente.setDescuento(producto.getDescuento());
+        productoExistente.setGenero(producto.getGenero());
+        productoExistente.setTipo(producto.getTipo());
+        productoRepository.save(productoExistente);
+        return "redirect:/listarProductos";
+    }
+
+    @RequestMapping(value="/excluirProducto/{id}", method=RequestMethod.GET)
+    public String excluirProducto(@PathVariable("id") Long id) {
+        productoRepository.deleteById(id);
+        return "redirect:/listarProductos";
+    }
+
+    @RequestMapping(value="/vermasProducto/{id}", method=RequestMethod.GET)
+    public ModelAndView vermasProducto(@PathVariable("id") Long id) {
+        ModelAndView mv = new ModelAndView("vermasProducto");
+        Optional<Producto> productos = productoRepository.findById(id);
+        mv.addObject("nombre", productos.get().getNombre());
+        mv.addObject("descripcion", productos.get().getDescripcion());
+        mv.addObject("precio", productos.get().getPrecio());
+        mv.addObject("descuento", productos.get().getDescuento());
+        mv.addObject("foto", productos.get().getFoto());
         return mv;
     }
 }
