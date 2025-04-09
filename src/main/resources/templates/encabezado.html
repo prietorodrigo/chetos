@@ -1,0 +1,715 @@
+<header
+        class="header header-1 complete is-fixed-mobile  h-pr-background  no-logo-padding"
+        id=""
+>
+    <div class="d-block d-xl-none">
+
+
+        <div class="header-mobile header-mobile-1 position-relative">
+            <div class="header-bg h-pr-background" style="opacity: .0;"></div>
+            <div class="container-fluid">
+                <div class="row equal no-gutters">
+                    <div class="col-auto">
+                        <div class="h-100 d-flex align-items-center justify-content-start">
+                            <a class="nav-menu d-flex align-items-center h-sc-color"
+                               href="https://www.espvalentina.com.br/javascript:void(0)" aria-label="Menu">
+                                <i class="menu-icon h-hl-color"><i class="material-icons md-36">menu</i></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="h-100 d-flex align-items-center justify-content-start ml-4">
+
+
+                            <div class="d-block d-lg-none logo w-100">
+                                <a class="logo-link" href="/index" title="Espaço Valentina"
+                                   aria-label="logo">
+                                    <img
+                                            loading="lazy"
+                                            class="img-fluid" src="img/logo-chetos.png"
+                                            alt="logo3"
+                                            style="max-height:                    100px"
+                                    >
+                                </a>
+                            </div>
+
+                            <div class="d-none d-lg-block logo text-center">
+                                <a class="logo-link" href="/index" title="Espaço Valentina"
+                                   aria-label="logo">
+                                    <img
+                                            loading="lazy"
+                                            class="img-fluid" src="img/logo-chetos.png"
+                                            alt="logo3"
+                                            style="max-height:                    100px"
+                                    >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="h-100 d-flex align-items-center justify-content-end">
+                            <div class="mr-2">
+
+                                <div class="smart-search modal-s">
+                                    <div class="row justify-content-center no-gutters">
+                                        <button class="smart-button" aria-label="Procurar produtos">
+                                            <i class="icon h-sc-color">
+                                                <i class="material-icons md-36">search</i>
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="smart-search-modal position-fixed">
+                                    <div class="smart-bg h-pr-background"></div>
+                                    <div class="smart-form">
+                                        <div class="row justify-content-center">
+                                            <div class="d-block d-lg-none col-12">
+                                                <div class="smart-header d-flex justify-content-between align-items-center">
+                                                    <div class="h2 m-0 d-block d-md-none">O que você procura ?</div>
+                                                    <div class="smart-close">
+                                                        <i class="icon">
+                                                            <i class="material-icons md-36">close</i>
+                                                        </i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-none d-lg-block col-12 text-center mb-5">
+                                                <div class="smart-close">
+                                                    <i class="icon">
+                                                        <i class="material-icons md-36">close</i>
+                                                    </i>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 text-center mb-4 d-none d-md-block">
+                                                <div class="h1">O que você procura ?</div>
+                                            </div>
+                                            <div class="col-12">
+                                                <form class="position-relative form" method="get"
+                                                      action="https://www.espvalentina.com.br/produtos">
+                                                    <input name="q" type="text" class="smart-input pl-5 pr-5"
+                                                           placeholder="Buscar por produtos"
+                                                           style="border: solid .1rem #eaeaea;">
+                                                    <button type="submit" class="smart-submit">
+                                                        <div class="smart-search-loader"><span
+                                                                class="loader"></span></div>
+                                                        <i class="icon">
+                                                            <i class="material-icons md-36">search</i>
+                                                        </i>
+                                                    </button>
+
+                                                    <div class="smart-search-result position-absolute">
+                                                        <div class="smart-search-term p-3 d-flex align-items-center justify-content-center flex-wrap">
+                                                            <span class="label">Produtos recomendados</span>
+                                                        </div>
+                                                        <div class="result__search">
+                                                            <ul class="result-list" dc-scroll>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-center p-3">
+                                                            <button class="smart-all-results d-block w-100"
+                                                                    type="submit">visualizar todos os resultados
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="col-12 text-center">
+                                                <div class="smart-message p-4 rounded">
+                                                    <div class="d-flex align-items-center justify-content-center">
+                                                        <b class="text">É necessário preencher o campo de busca</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <script type="text/javascript">document.addEventListener("DOMContentLoaded", function () {    $(function() {
+        var modal = $('.smart-search-modal');
+        var main = $('.smart-search.modal-s');
+        var body = $('body, html');
+        var button = main.find('.smart-button');
+        var input = modal.find('.smart-input');
+        var form = modal.find('.form');
+        var message = modal.find('.smart-message');
+        var button_close = $('.smart-close');
+
+        var close = function () {
+            body.removeClass('no-scroll');
+            input.val('');
+            modal.fadeOut();
+            message.fadeOut();
+        };
+
+        button.click(function(e) {
+            e.preventDefault();
+            body.addClass('no-scroll');
+            modal.fadeIn();
+            input.focus();
+        });
+
+        $(document).keyup(function(e) {
+            if (e.keyCode === 27) {
+                close();
+            }
+        });
+
+        $(document).click(function(e) {
+            var modal_opened = body.hasClass('no-scroll');
+            var modal_form = $(e.target).closest('.smart-form').length;
+
+            if ($(e.target).closest('.smart-button').length === 1) return ;
+
+            if (modal_opened && (modal_form === 0)) {
+                close();
+            }
+        });
+
+
+
+        button_close.click(function() {
+            close();
+        });
+    });
+}, false);
+                                </script>
+                            </div>
+                            <div class="mr-4">
+
+
+                                <div class="nav-user">
+                                    <a href="https://www.espvalentina.com.br/conta"
+                                       class="nav-link d-flex align-items-center">
+                                        <i class="nav-icon nav-custom">
+                                            <img loading="lazy" class="img-fluid"
+                                                 src="https://cdn.dooca.store/1710/files/usernew.svg?v=1614112698"
+                                                 alt="Minha conta">
+                                        </i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="nav-cart cart-style-1">
+                                <ajax-nav-cart>
+                                    <div class="position-relative pt-3 pb-3">
+                                        <a href="https://www.espvalentina.com.br/carrinho"
+                                           class="d-flex align-items-center" aria-label="Carrinho">
+                                            <i class="nav-icon nav-custom">
+                                                <img loading="lazy" class="img-fluid"
+                                                     src="https://cdn.dooca.store/1710/files/i-bag1.png?v=1722630190"
+                                                     alt="Carrinho">
+                                            </i>
+                                            <div class="ml-2 d-flex align-items-center justify-content-center flex-column">
+                                                <div class="nav-badge text-center d-flex align-items-center justify-content-center h-sc-background">
+                                                    <span class="text">0</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </ajax-nav-cart>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-none d-xl-block">
+        <div class="d-none d-xl-block">
+
+            <div class="header-fixed complete  h-pr-background">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <a class="nav-menu d-flex align-items-center h-sc-color"
+                               href="https://www.espvalentina.com.br/javascript:void(0)">
+                                <i class="menu-icon mr-3">
+                                    <i class="h-sc-color material-icons md-36">menu</i>
+                                </i>
+                                <span>MENU</span>
+                            </a>
+                        </div>
+                        <div class="col-auto h-sc-color">
+
+
+                            <div class="d-block d-lg-none logo w-100">
+                                <a class="logo-link" href="/index" title="Espaço Valentina"
+                                   aria-label="logo">
+                                    <img
+                                            loading="lazy"
+                                            class="img-fluid" src="img/logo-chetos.png"
+                                            alt="logo3"
+                                            style="max-height:                    100px"
+                                    >
+                                </a>
+                            </div>
+
+                            <div class="d-none d-lg-block logo text-center">
+                                <a class="logo-link" href="/index" title="Espaço Valentina"
+                                   aria-label="logo">
+                                    <img
+                                            loading="lazy"
+                                            class="img-fluid" src="img/logo-chetos.png"
+                                            alt="logo3"
+                                            style="max-height:                    100px"
+                                    >
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col col-smartsearch">
+
+                            <div class="smart-search">
+                                <div class="row justify-content-center no-gutters">
+                                    <form class="smart-form position-relative" method="get"
+                                          action="https://www.espvalentina.com.br/produtos">
+                                        <input class="smart-input rounded pl-4 pr-4" type="text" name="q"
+                                               placeholder="Olá, o que você procura?"
+                                               aria-label="Olá, o que você procura?" style="border-color: #eaeaea">
+                                        <button class="smart-button position-absolute" type="submit"
+                                                aria-label="Procurar">
+                                            <i class="h-sc-color icon">
+                                                <i class="material-icons md-36">search</i>
+                                            </i>
+                                        </button>
+
+                                        <div class="smart-search-result position-absolute">
+                                            <div class="smart-search-term p-3 d-flex align-items-center justify-content-center flex-wrap">
+                                                <span class="label">Produtos recomendados</span>
+                                            </div>
+                                            <div class="result__search">
+                                                <ul class="result-list" dc-scroll>
+                                                </ul>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-center p-3">
+                                                <button class="smart-all-results d-block w-100" type="submit">
+                                                    visualizar todos os resultados
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+
+
+                            <div class="nav-user">
+                                <a href="https://www.espvalentina.com.br/conta"
+                                   class="nav-link d-flex align-items-center">
+                                    <i class="nav-icon nav-custom">
+                                        <img loading="lazy" class="img-fluid"
+                                             src="https://cdn.dooca.store/1710/files/usernew.svg?v=1614112698"
+                                             alt="Minha conta">
+                                    </i>
+                                    <span class="h-sc-color ml-3">Minha conta</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+
+                            <div class="nav-cart cart-style-1">
+                                <ajax-nav-cart>
+                                    <div class="position-relative pt-3 pb-3">
+                                        <a href="https://www.espvalentina.com.br/carrinho"
+                                           class="d-flex align-items-center" aria-label="Carrinho">
+                                            <i class="nav-icon nav-custom">
+                                                <img loading="lazy" class="img-fluid"
+                                                     src="https://cdn.dooca.store/1710/files/i-bag1.png?v=1722630190"
+                                                     alt="Carrinho">
+                                            </i>
+                                            <div class="ml-2 d-flex align-items-center justify-content-center flex-column">
+                                                <div class="nav-badge text-center d-flex align-items-center justify-content-center h-sc-background">
+                                                    <span class="text">0</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </ajax-nav-cart>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script type="text/javascript">document.addEventListener("DOMContentLoaded", function () {    $(function() {
+        var header = $('.header');
+        var header_fixed = $('.header-fixed');
+
+        $(window).scroll(function() {
+            if($(this).scrollTop() > header.height()) {
+                header_fixed.addClass('is-fixed');
+            } else {
+                header_fixed.removeClass('is-fixed');
+            }
+        });
+    });
+}, false);
+            </script>
+        </div>
+
+        <div class="header-top position-relative">
+            <div class="header-bg h-pr-background" style="opacity: .0;"></div>
+            <div class="container">
+                <div class="row no-gutters align-items-center">
+                    <div class="col">
+                        <div class="nav-contact mt-3 mb-3">
+                            <div class="row no-gutters align-items-center">
+
+
+                                <div class="col-auto mr-2">
+                                    <a class="phone d-flex align-items-center" rel="noreferrer"
+                                       href="https://www.espvalentina.com.br/mailto:Atendimento" target="_blank">
+                                        <i class="icon mr-2">
+                                                <span class="icon-email"
+                                                      style="font-size: 19px; max-width: 1.9rem;"></span>
+                                        </i>
+                                        Atendimento
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <div class="d-flex align-items-center">
+                            <div class="nav-social">
+                                <div class="row no-gutters align-items-center justify-content-between">
+                                    <div class="col-auto pl-4 mt-3 mb-3">
+                                        <a class="text-center" rel="noreferrer" aria-label="facebook"
+                                           target="_blank" href="http://www.facebook.com/espvalentina">
+                                            <i class="icon"><span class="icon-facebook"></span></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-auto pl-4 mt-3 mb-3">
+                                        <a class="text-center" rel="noreferrer" aria-label="instagram"
+                                           target="_blank" href="http://www.instagram.com/espvalentina">
+                                            <i class="icon"><span class="icon-instagram"></span></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-box  h-pr-background"
+        >
+            <div class="header-middle position-relative">
+                <div class="header-bg h-pr-background" style="opacity: .0;"></div>
+                <div class="container">
+                    <div class="row justify-content-between align-items-center pt-2 pb-2">
+                        <div class="col-auto h-sc-color">
+
+
+                            <div class="d-block d-lg-none logo w-100">
+                                <a class="logo-link" href="/index" title="Espaço Valentina"
+                                   aria-label="logo">
+                                    <img
+                                            loading="lazy"
+                                            class="img-fluid" src="img/logo-chetos.png"
+                                            alt="logo3"
+                                            style="max-height:                    160px"
+                                    >
+                                </a>
+                            </div>
+
+                            <div class="d-none d-lg-block logo text-center">
+                                <a class="logo-link" href="/index" title="Espaço Valentina"
+                                   aria-label="logo">
+                                    <img
+                                            loading="lazy"
+                                            class="img-fluid" src="img/logo-chetos.png"
+                                            alt="logo3"
+                                            style="max-height:                    160px"
+                                    >
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+
+                            <div class="smart-search">
+                                <div class="row justify-content-center no-gutters">
+                                    <form class="smart-form position-relative" method="get"
+                                          action="https://www.espvalentina.com.br/produtos">
+                                        <input class="smart-input rounded pl-4 pr-4" type="text" name="q"
+                                               placeholder="Olá, o que você procura?"
+                                               aria-label="Olá, o que você procura?" style="border-color: #eaeaea">
+                                        <button class="smart-button position-absolute" type="submit"
+                                                aria-label="Procurar">
+                                            <i class="h-sc-color icon">
+                                                <i class="material-icons md-36">search</i>
+                                            </i>
+                                        </button>
+
+                                        <div class="smart-search-result position-absolute">
+                                            <div class="smart-search-term p-3 d-flex align-items-center justify-content-center flex-wrap">
+                                                <span class="label">Produtos recomendados</span>
+                                            </div>
+                                            <div class="result__search">
+                                                <ul class="result-list" dc-scroll>
+                                                </ul>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-center p-3">
+                                                <button class="smart-all-results d-block w-100" type="submit">
+                                                    visualizar todos os resultados
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+
+
+                            <div class="nav-user">
+                                <a href="https://www.espvalentina.com.br/conta"
+                                   class="nav-link d-flex align-items-center">
+                                    <i class="nav-icon nav-custom">
+                                        <img loading="lazy" class="img-fluid"
+                                             src="https://cdn.dooca.store/1710/files/usernew.svg?v=1614112698"
+                                             alt="Minha conta">
+                                    </i>
+                                    <span class="h-sc-color ml-3">Minha conta</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+
+                            <div class="nav-cart cart-style-1">
+                                <ajax-nav-cart>
+                                    <div class="position-relative pt-3 pb-3">
+                                        <a href="https://www.espvalentina.com.br/carrinho"
+                                           class="d-flex align-items-center" aria-label="Carrinho">
+                                            <i class="nav-icon nav-custom">
+                                                <img loading="lazy" class="img-fluid"
+                                                     src="https://cdn.dooca.store/1710/files/i-bag1.png?v=1722630190"
+                                                     alt="Carrinho">
+                                            </i>
+                                            <div class="ml-2 d-flex align-items-center justify-content-center flex-column">
+                                                <div class="nav-badge text-center d-flex align-items-center justify-content-center h-sc-background">
+                                                    <span class="text">0</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </ajax-nav-cart>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom position-relative h-mn-background">
+                <div class="header-bg h-mn-background" style="opacity: .0;"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+
+
+                            <nav class="navigation rv-last-items">
+                                <div class="row no-gutters justify-content-between">
+
+
+                                    <div class="col-auto navigation-item">
+                                        <a
+                                                class="h-mn-color 							navigation-link  h-100 d-flex justify-content-center align-items-center pt-4 pb-4"
+                                                href="https://www.espvalentina.com.br/news-da-semana"
+                                                aria-label="NEWS DA SEMANA"
+                                        >
+                                            <span class="d-flex justify-content-center align-items-center text-center px-4">NEWS DA SEMANA</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-auto navigation-item d-flex align-items-center">
+                                        <div class="navigation-separator" style="color: #eaeaea;"></div>
+                                    </div>
+
+
+                                    <div class="col-auto navigation-item">
+                                        <a
+                                                class="h-mn-color 							navigation-link  h-100 d-flex justify-content-center align-items-center pt-4 pb-4"
+                                                href="https://www.espvalentina.com.br/mais-vendidos"
+                                                aria-label="ESHELEY"
+                                        >
+                                            <span class="d-flex justify-content-center align-items-center text-center px-4">ESHELEY</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-auto navigation-item d-flex align-items-center">
+                                        <div class="navigation-separator" style="color: #eaeaea;"></div>
+                                    </div>
+
+
+                                    <div class="col-auto navigation-item">
+                                        <a
+                                                class="h-mn-color 							navigation-link  h-100 d-flex justify-content-center align-items-center pt-4 pb-4"
+                                                href="https://www.espvalentina.com.br/colecao-fim-de-ano"
+                                                aria-label="COLEÇÃO VERÃO"
+                                        >
+                                            <span class="d-flex justify-content-center align-items-center text-center px-4">COLEÇÃO VERÃO</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-auto navigation-item d-flex align-items-center">
+                                        <div class="navigation-separator" style="color: #eaeaea;"></div>
+                                    </div>
+
+
+                                    <div class="col-auto navigation-item">
+                                        <a
+                                                class="h-mn-color 							navigation-link  h-100 d-flex justify-content-center align-items-center pt-4 pb-4"
+                                                href="https://www.espvalentina.com.br/promocao"
+                                                aria-label="PROMOÇÃO"
+                                        >
+                                            <span class="d-flex justify-content-center align-items-center text-center px-4">PROMOÇÃO</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-auto navigation-item d-flex align-items-center">
+                                        <div class="navigation-separator" style="color: #eaeaea;"></div>
+                                    </div>
+
+
+                                    <div class="col-auto navigation-item double-column">
+                                        <a
+                                                class="h-mn-color 							navigation-link  h-100 d-flex justify-content-center align-items-center pt-4 pb-4"
+                                                href="https://www.espvalentina.com.br/feminino"
+                                                aria-label="FEMININO"
+                                        >
+                                            <span class="d-flex justify-content-center align-items-center text-center px-4">FEMININO</span>
+                                        </a>
+                                        <div class="menu-dropdown position-absolute"
+                                             style="border: solid .1rem #eaeaea;">
+                                            <div class="menu-dropdown-container py-3">
+                                                <div class="row no-gutters">
+                                                    <div class="menu-dropdown-item col-12 position-relative px-3">
+                                                        <a
+                                                                href="https://www.espvalentina.com.br/shorts"
+                                                                class="menu-dropdown-link d-flex justify-content-start align-items-center p-3"
+                                                        >
+                                                            <span class="text">Shorts</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-dropdown-item col-12 position-relative px-3">
+                                                        <a
+                                                                href="https://www.espvalentina.com.br/calcas"
+                                                                class="menu-dropdown-link d-flex justify-content-start align-items-center p-3"
+                                                        >
+                                                            <span class="text">Calças</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-dropdown-item col-12 position-relative px-3">
+                                                        <a
+                                                                href="https://www.espvalentina.com.br/blusas"
+                                                                class="menu-dropdown-link d-flex justify-content-start align-items-center p-3"
+                                                        >
+                                                            <span class="text">Blusas</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-dropdown-item col-12 position-relative px-3">
+                                                        <a
+                                                                href="https://www.espvalentina.com.br/saias"
+                                                                class="menu-dropdown-link d-flex justify-content-start align-items-center p-3"
+                                                        >
+                                                            <span class="text">Saias</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-dropdown-item col-12 position-relative px-3">
+                                                        <a
+                                                                href="https://www.espvalentina.com.br/macacoes"
+                                                                class="menu-dropdown-link d-flex justify-content-start align-items-center p-3"
+                                                        >
+                                                            <span class="text">Macacões</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-dropdown-item col-12 position-relative px-3">
+                                                        <a
+                                                                href="https://www.espvalentina.com.br/macaquinhos"
+                                                                class="menu-dropdown-link d-flex justify-content-start align-items-center p-3"
+                                                        >
+                                                            <span class="text">Macaquinhos</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-dropdown-item col-12 position-relative px-3">
+                                                        <a
+                                                                href="https://www.espvalentina.com.br/casacos"
+                                                                class="menu-dropdown-link d-flex justify-content-start align-items-center p-3"
+                                                        >
+                                                            <span class="text">Casacos</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-dropdown-item col-12 position-relative px-3">
+                                                        <a
+                                                                href="https://www.espvalentina.com.br/conjuntos"
+                                                                class="menu-dropdown-link d-flex justify-content-start align-items-center p-3"
+                                                        >
+                                                            <span class="text">Conjuntos</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-dropdown-item col-12 position-relative px-3">
+                                                        <a
+                                                                href="https://www.espvalentina.com.br/body"
+                                                                class="menu-dropdown-link d-flex justify-content-start align-items-center p-3"
+                                                        >
+                                                            <span class="text">Body</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-dropdown-item col-12 position-relative px-3">
+                                                        <a
+                                                                href="https://www.espvalentina.com.br/cropped"
+                                                                class="menu-dropdown-link d-flex justify-content-start align-items-center p-3"
+                                                        >
+                                                            <span class="text">Cropped</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-dropdown-item col-12 position-relative px-3">
+                                                        <a
+                                                                href="https://www.espvalentina.com.br/vestidos"
+                                                                class="menu-dropdown-link d-flex justify-content-start align-items-center p-3"
+                                                        >
+                                                            <span class="text">Vestidos</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-dropdown-item col-12 position-relative px-3">
+                                                        <a
+                                                                href="https://www.espvalentina.com.br/biquini"
+                                                                class="menu-dropdown-link d-flex justify-content-start align-items-center p-3"
+                                                        >
+                                                            <span class="text">Biquíni</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-dropdown-item col-12 position-relative px-3">
+                                                        <a
+                                                                href="https://www.espvalentina.com.br/acessorios-femininos"
+                                                                class="menu-dropdown-link d-flex justify-content-start align-items-center p-3"
+                                                        >
+                                                            <span class="text">Acessórios Femininos</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto navigation-item d-flex align-items-center">
+                                        <div class="navigation-separator" style="color: #eaeaea;"></div>
+                                    </div>
+
+
+                                    <div class="col-auto navigation-item">
+                                        <a
+                                                class="h-mn-color 							navigation-link  h-100 d-flex justify-content-center align-items-center pt-4 pb-4"
+                                                href="https://www.espvalentina.com.br/contato"
+                                                aria-label="CONTATO"
+                                        >
+                                            <span class="d-flex justify-content-center align-items-center text-center px-4">CONTATO</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
